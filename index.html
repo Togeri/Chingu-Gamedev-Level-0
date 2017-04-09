@@ -1,13 +1,48 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Super Mario</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi"
+    />
+
+    <title>Super Mario</title>
+
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: #444444;
+        }
+        
+        canvas {
+            padding: 0;
+            margin: auto;
+            display: block;
+            background: black;
+        }
+    </style>
+
+    <script>
+        function init(){
+            //TODO here we need to load all images from assets before printing canvas on the screen
+        }
+    </script>
+
 </head>
-<body style="background: #444;">
-  <!-- Height & width needs to be divisible by 16 (map is 16 tiles high) -->
-  <canvas id="canvas" style="padding: 0; height: 640px; width: 800px; margin: auto; display: block; background: black;"></canvas>
-  <script src="Bin/game.js"></script>
-  <script src="Bin/map.js"></script>
-  <script src="Bin/player.js"></script>
-  <script src="Bin/enemy.js"></script>
+
+<body onload="init()">
+    <!-- Height & width needs to be divisible by 16 (map is 16 tiles high) -->
+    <canvas id="canvas" height="640" width="800"></canvas>
+    <script src="Bin/game.js"></script>
+    <script src="Bin/map.js"></script>
+    <script src="Bin/player.js"></script>
+    <script src="Bin/enemy.js"></script>
 </body>
+
 </html>
