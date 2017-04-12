@@ -29,14 +29,46 @@
     </style>
 
     <script>
-        function init(){
-            //TODO here we need to load all images from assets before printing canvas on the screen
-        }
+            function loop() {
+                mapDraw();
+                marioDraw();
+                //marioSprite();
+                marioMove();
+                
+                setInterval(loop, 17);
+            }
+        
+            function onloadHandler() {
+                count--;
+                if (count === 0) {
+                    tilesInit(); //Fill the tileX, tileY arrays
+                    loop();
+                }
+            }
+        
+            //TODO fill the imageURLs array with ulrs that we will USE.
+            var imageURLs = ["https://raw.githubusercontent.com/Togeri/Chingu-Gamedev-Level-0/master/Assets/img/Tileset.png", 
+                             "https://raw.githubusercontent.com/Togeri/Chingu-Gamedev-Level-0/master/Assets/img/mario-small-1.png"],
+                images = [],
+                count = imageURLs.length;
+
+            for (var i = 0; i < count; i++){
+                var img = new Image();
+
+                images.push(img);
+
+                 //Set handler and the url
+                img.onload = onloadHandler;
+                img.src = imageURLs[i];
+
+                 /// if image is cached IE may not trigger onload
+                if (img.complete) onloadHandler().bind(img);
+            }
     </script>
 
 </head>
 
-<body onload="init()">
+<body>
     <!-- Height & width needs to be divisible by 16 (map is 16 tiles high) -->
     <canvas id="canvas" height="640" width="800"></canvas>
     <script src="Bin/game.js"></script>
