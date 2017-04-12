@@ -1,18 +1,19 @@
+//TODO sprite mechanics with these sprites
 var mario = images[1]
 
 //Mario Variables
 //X and Y position of Mario
 var marioX = 0, marioY = tileSize * 13;
-var marioDX = 1;
+var marioDX = 5;
 
 //Sprites sheet Variables
-var spriteWidth = 16, spriteHeight = 16;
-var framePosition = 64;		//Default position of standing Mario
+var spriteWidth = 14, spriteHeight = 14;
+var framePositionX = 81, framePositionY = 34;		//Default position of standing Mario
 var frameSprite = 0;
 
 
 function marioDraw(){
-    c.drawImage(mario, framePosition, 0, spriteWidth, spriteHeight, marioX, marioY, canvas.height / 16, canvas.height / 16);
+    c.drawImage(mario, framePositionX, framePositionY, spriteWidth, spriteHeight, marioX, marioY, tileSize, tileSize);
 }
 
 //Mario Movement Variables

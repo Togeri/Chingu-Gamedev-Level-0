@@ -46,6 +46,8 @@ function drawTile(x, y, inputX, inputY) {
 // Loop that fills in tiles from map data
 //TODO: screenDraw function that draws just the screen, not whole map.
 function mapDraw() {
+    c.fillStyle = "#63adff";
+    c.fillRect(0,0,canvas.width, canvas.height);
     for (var y = 0; y < map.length; y++) {
       for (var x = 0; x < map[y].length; x++) {
         switch (map[y][x]) {
