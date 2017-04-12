@@ -1,16 +1,15 @@
-//TODO: Change mario sprites   
 var mario = images[1]
-
 
 //Mario Variables
 //X and Y position of Mario
 var marioX = 0, marioY = tileSize * 13;
-var marioDX = 2;
+var marioDX = 1;
 
 //Sprites sheet Variables
 var spriteWidth = 16, spriteHeight = 16;
-var framePosition = 64;		//Default Standing Mario
-var frameSprite = 0;		//Sprite that is going to get printed //TODO: Create array of positions, like with map
+var framePosition = 64;		//Default position of standing Mario
+var frameSprite = 0;
+
 
 function marioDraw(){
     c.drawImage(mario, framePosition, 0, spriteWidth, spriteHeight, marioX, marioY, canvas.height / 16, canvas.height / 16);
@@ -23,11 +22,11 @@ var direction = 1; 	// 1 for right, -1 for left
 var rightPressed = false;
 var leftPressed = false;
 
-//TODO: Sprites changer
+//Sprites mechanics
 function marioSprite(){
 	if(rightPressed && direction == 1)	{
 		framePosition = 80 + (16 * Math.floor((frameSprite % 3)));
-		frameSprite+= 0.2;
+		frameSprite+= 0.1;
 	}
 	else if(leftPressed && direction == -1)	{
 		framePosition = 32 - (16 * Math.floor((frameSprite % 3)));
@@ -41,8 +40,6 @@ function marioSprite(){
 			framePosition = 48;
 		}
 	}
-	
-
 }
 
 function marioMove()	{
