@@ -61,11 +61,11 @@ function drawMario()	{
 function marioWalk(){
 	if(rightPressed && direction == 1)	{
 		framePosition = 80 + (16 * Math.floor((frameSprite % 3)));
-		frameSprite+= 0.25;
+		frameSprite+= 0.2;
 	}
 	else if(leftPressed && direction == -1)	{
 		framePosition = 32 - (16 * Math.floor((frameSprite % 3)));
-		frameSprite+= 0.25;
+		frameSprite+= 0.2;
 	}
 	else   {
 		if (direction == 1) {
