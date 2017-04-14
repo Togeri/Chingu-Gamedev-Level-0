@@ -189,7 +189,7 @@ function marioStatus ()	{
 //Mario Game Over
 
 	//Triggering Game Over Animation when MarioX == 700 for Dev purposes
-	if(marioX == 700)	{
+	if(marioX >= 700)	{
 		gameOver = true;
 	}
 
