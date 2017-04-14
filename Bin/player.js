@@ -2,6 +2,7 @@
 
 var marioSprite = images[1]
 
+
 //Mario Variables
 var marioX = 100;	//Mario's X-axis
 var marioY = tileSize * 13;	//Mario's Y-axis
@@ -44,7 +45,6 @@ var leftPressed = false;
 var upPressed = false;
 var downPressed = false;
 var bButtonPressed = false;
-
 
 
 
@@ -92,7 +92,7 @@ function marioAnimations()	{
 	}
 
 	//Mario Standing Animation. Right and Left.
-	else   {
+	else   
 		if (direction == 1) {
 		frameXPosition = 210;
 		}
@@ -206,7 +206,6 @@ function marioMoving()	{
 		marioY -= jumpForce;
 	}
 
-
 //Mario Falling Movement
 
 	//Falling Movement with Jump interaction. The longer we keep the jump button pressed, the higher Mario rises, up to a limit
@@ -217,23 +216,23 @@ function marioMoving()	{
 		else if(jumpCounter >= 40)	{
 			marioY += 8;
 		}
-
 	}
+  
 	//Falling Movement if Mario simply falls of a cliff without jumping.
 	else if(marioSuspension &&!gameOver)	{
 		marioY += 8; 
 	}
 
-	//Mario Moving Logic
+  //Mario Moving Logic
 
 	//Walking
-
 	if(rightPressed && !running &&!gameOver)	{		//Walking Right
 		marioX += marioDX;
 		moving = true;
 		direction = 1;
 
 	}
+
 	else if(leftPressed && !running &&!gameOver)	{	//Walking Left
 		marioX -= marioDX;
 		direction = -1;
@@ -241,7 +240,6 @@ function marioMoving()	{
 	}
 
 	//Running
-
 	if(rightPressed && running &&!gameOver)	{		//Running Right
 		marioX += marioDX * 2;
 		moving = true;
@@ -255,9 +253,7 @@ function marioMoving()	{
 		direction = -1;
 		moving = true;
 	}
-}
-
-
+	
 
 
 //Keyboard Events
@@ -274,6 +270,7 @@ function keyDownHandler(e) {
     else if(e.keyCode == 37) {
         leftPressed = true;
     }
+ 
 
     else if(e.keyCode == 38)	{
     	upPressed = true;
@@ -285,6 +282,11 @@ function keyDownHandler(e) {
 
     else if(e.keyCode == 40)	{
     	downPressed = true;
+    }
+
+
+    else if(e.keyCode == 38) {
+    	upPressed = true;
     }
 
 }
@@ -313,3 +315,10 @@ function keyUpHandler(e) {
     }
     
 }
+
+    else if(e.keyCode == 38) {
+    	upPressed = false;
+    	endJump();
+    }
+}
+
