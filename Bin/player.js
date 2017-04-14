@@ -129,6 +129,7 @@ function marioAnimations()	{
 	if(gameOver)	{
 		frameXPosition = 0;
 		frameYPosition = 16;
+		gravity = 0;
 		setTimeout(gameOverAnimation, 750);
 			function gameOverAnimation() {
 				marioY += (-(jumpForce + 3)) + gravity;
