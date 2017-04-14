@@ -32,8 +32,9 @@
             function loop() {
                 mapDraw();
                 marioDraw();
-                marioSprite();
-                marioMove();
+                marioAnimations();
+                marioStatus();
+                marioMoving();
                 
                 setTimeout(loop, 17);
             }
@@ -48,7 +49,7 @@
         
             //TODO fill the imageURLs array with ulrs that we will USE.
             var imageURLs = ["https://raw.githubusercontent.com/Togeri/Chingu-Gamedev-Level-0/master/Assets/img/Tileset.png", 
-                             "Assets/img/mario_lui.png"],
+                             "Assets/img/mario.png"],
                 images = [],
                 count = imageURLs.length;
 
