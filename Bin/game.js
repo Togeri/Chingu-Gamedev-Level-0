@@ -13,7 +13,7 @@ function init() {
     "enemiesSheet": 'Assets/img/Enemies.png',
     "itemkSheet": 'Assets/img/Item and Brick Blocks.png',
     "objectsSheet": 'Assets/img/Items & Objects.png',
-    "mario": 'Assets/img/mario_lui.png',
+    "mario": 'Assets/img/mario.png',
     "tileSet": 'Assets/img/Tileset.png',
     "textSheet": 'Assets/img/Time Up Game Over Screens and Text.png',
     "titleSheet": 'Assets/img/Title Screen.png'
@@ -34,7 +34,7 @@ function onProgress(loaded, total, key, path, success) {
 function onLoaded() {
   console.log("All images loaded");
   tileSet = imageManager.get("tileSet"); // tileSet is declered in map.js
-  mario = imageManager.get("mario");    //  mario is declered in player.js
+  marioSprite = imageManager.get("mario");    //  marioSprite is declered in player.js
 
   tilesInit(); //Fill the tileX, tileY arrays
   loop();
@@ -43,8 +43,9 @@ function onLoaded() {
 function loop() {
   mapDraw();
   marioDraw();
-  marioSprite();
-  marioMove();
+  marioAnimations();
+  marioStatus();
+  marioMoving();
 
   setTimeout(loop, 17);
 }
