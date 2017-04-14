@@ -32,15 +32,15 @@ function marioDraw(){
 
 //Sprites mechanics
 function marioSprite(){
-	if(rightPressed && direction == 1)	{
+	if(rightPressed && direction == 1){
 		framePosition = 80 + (16 * Math.floor((frameSprite % 3)));
 		frameSprite+= 0.1;
 	}
-	else if(leftPressed && direction == -1)	{
+	else if(leftPressed && direction == -1){
 		framePosition = 32 - (16 * Math.floor((frameSprite % 3)));
 		frameSprite+= 0.2;
 	}
-	else   {
+	else{
 		if (direction == 1) {
 		framePosition = 64;
 		}
@@ -50,17 +50,17 @@ function marioSprite(){
 	}
 }
 
+//Updates the actual position of Mario
 function marioMove()	{
-	//Mario Moving Logic
 	if(rightPressed)	{
 		marioX += marioDX;
 		direction = 1;
 	}
-	else if(leftPressed)	{
+	if(leftPressed)	{
 		marioX -= marioDX;
 		direction = -1;
 	}
-	else if(upPressed) {
+	if(upPressed) {
 		startJump();
 	}
 
@@ -86,8 +86,6 @@ function endJump(){
     if(marioDY < -6.0)
         marioDY = -6.0;
 }
-
-//Updating the movement 
 
 //Keyboard Events
 document.addEventListener("keydown", keyDownHandler, false);
