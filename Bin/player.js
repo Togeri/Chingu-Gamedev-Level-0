@@ -1,4 +1,5 @@
 
+
 var marioSprite = images[1]
 
 //Mario Variables
@@ -33,6 +34,7 @@ var jumpForce = 9;		//Force of Mario's jump
 var marioSuspension = false;	//Status for Mario staying in air suspension
 var marioLanded;				//Status for Mario being over something (use this for collision detection)
 var running = false;			//Running status when pressing X on keyboard
+var gameOver = false;
 
 
 //Key Event Variables
@@ -62,28 +64,28 @@ function marioAnimations()	{
 //Mario Walk / Run Animations
 
 	//Mario Running Animation Right
-	if(rightPressed && direction == 1 && marioLanded && !bButtonPressed)	{	
+	if(rightPressed && direction == 1 && marioLanded && !bButtonPressed &&!gameOver)	{	
 		frameXPosition = 240 + (30 * Math.floor((frameSprite % 3)));
 		frameSprite+= 0.2;
 		frameSprite %= 3;
 	}
 
 	//Mario Running Animation Left
-	else if(rightPressed && direction == 1 && marioLanded && bButtonPressed)	{
+	else if(rightPressed && direction == 1 && marioLanded && bButtonPressed &&!gameOver)	{
 		frameXPosition = 240 + (30 * Math.floor((frameSprite % 3)));
 		frameSprite+= 0.4;
 		frameSprite %= 3;
 	}
 
 	//Mario Walking Animation Right
-	else if(leftPressed && direction == -1 && marioLanded && !bButtonPressed)	{
+	else if(leftPressed && direction == -1 && marioLanded && !bButtonPressed &&!gameOver)	{
 		frameXPosition =  150 - (30 * Math.floor((frameSprite % 3)));
 		frameSprite+= 0.2;
 		frameSprite %= 3;
 	}
 
 	//Mario Walking Animation Left
-	else if(leftPressed && direction == -1 && marioLanded && bButtonPressed)	{
+	else if(leftPressed && direction == -1 && marioLanded && bButtonPressed &&!gameOver)	{
 		frameXPosition =  150 - (30 * Math.floor((frameSprite % 3)));
 		frameSprite+= 0.4;
 		frameSprite %= 3;
@@ -103,23 +105,36 @@ function marioAnimations()	{
 //Mario Jump Animations
 
 	//Jumping Right Animation. 
-	if(upPressed && direction == 1 && marioLanded)	{
+	if(upPressed && direction == 1 && marioLanded &&!gameOver)	{
 		frameXPosition = 359;
 	}
 
 	//Jumping Left Animation. Triggering Jump Status
-	if(upPressed && direction == -1 && marioLanded)	{
+	if(upPressed && direction == -1 && marioLanded &&!gameOver)	{
 		frameXPosition = 29;
 	}
 
 	//Mario Jump Animation once Jump has started 
-	if(jumpStatus && direction == 1)	{
+	if(jumpStatus && direction == 1 &&!gameOver)	{
 		frameXPosition = 359;
 	}
 
 	//Mario Jump Movement Left once Jump has started
-	if(jumpStatus && direction == -1)	{
+	if(jumpStatus && direction == -1 &&!gameOver)	{
 		frameXPosition = 29;
+	}
+
+//Mario Game Over Animations
+
+	if(gameOver)	{
+		frameXPosition = 0;
+		frameYPosition = 16;
+		setTimeout(gameOverAnimation, 750);
+			function gameOverAnimation() {
+				marioY += (-(jumpForce + 3)) + gravity;
+				gravity += 0.7;
+			}
+
 	}
 
 
@@ -132,7 +147,7 @@ function marioStatus ()	{
 //Jump Status
 
 	//Triggering Jump Status & Keeping Jump Counter
-	if(upPressed && marioLanded)	{
+	if(upPressed && marioLanded &&!gameOver)	{
 
 		jumpStatus = true;
 
@@ -144,7 +159,7 @@ function marioStatus ()	{
 //Actions Status
 
 //For dev purposes, 500 height will be the "floor"
-	if(marioY >= tileSize * 13)	{
+	if(marioY >= tileSize * 13 &&!gameOver)	{
 
 		jumpStatus = false;
 		jumpCounter = 0;
@@ -153,7 +168,7 @@ function marioStatus ()	{
 		gravity = 0;
 		
 	}
-	else if(marioY < tileSize * 13)	{
+	else if(marioY < tileSize * 13 &&!gameOver)	{
 
 		marioSuspension = true;
 		marioLanded = false;
@@ -164,11 +179,18 @@ function marioStatus ()	{
 //B Button Actions include Running and Dropping a Fire-Bomb once Mario has eaten enough Mushrooms.
 	
 	//B for Running
-	if((rightPressed || leftPressed) && marioLanded && bButtonPressed)	{	//Running
+	if((rightPressed || leftPressed) && marioLanded && bButtonPressed &&!gameOver)	{	//Running
 		running = true;
 	}
-	else if((rightPressed || leftPressed) && marioLanded && !bButtonPressed)	{	//Stop Running
+	else if((rightPressed || leftPressed) && marioLanded && !bButtonPressed &&!gameOver)	{	//Stop Running
 		running = false;
+	}
+
+//Mario Game Over
+
+	//Triggering Game Over Animation when MarioX == 700 for Dev purposes
+	if(marioX == 700)	{
+		gameOver = true;
 	}
 
 }
@@ -180,7 +202,7 @@ function marioStatus ()	{
 function marioMoving()	{
 
 //Mario Jumping Movement. Jump Initial Move (with no gravity effect) 
-	if(upPressed && marioLanded)	{
+	if(upPressed && marioLanded &&!gameOver)	{
 		marioY -= jumpForce;
 	}
 
@@ -188,7 +210,7 @@ function marioMoving()	{
 //Mario Falling Movement
 
 	//Falling Movement with Jump interaction. The longer we keep the jump button pressed, the higher Mario rises, up to a limit
-	if(marioSuspension && upPressed)	{
+	if(marioSuspension && upPressed &&!gameOver)	{
 		if(jumpCounter < 40)	{	
 			marioY += (-jumpForce) + gravity;
 		}
@@ -198,7 +220,7 @@ function marioMoving()	{
 
 	}
 	//Falling Movement if Mario simply falls of a cliff without jumping.
-	else if(marioSuspension)	{
+	else if(marioSuspension &&!gameOver)	{
 		marioY += 8; 
 	}
 
@@ -206,13 +228,13 @@ function marioMoving()	{
 
 	//Walking
 
-	if(rightPressed && !running)	{		//Walking Right
+	if(rightPressed && !running &&!gameOver)	{		//Walking Right
 		marioX += marioDX;
 		moving = true;
 		direction = 1;
 
 	}
-	else if(leftPressed && !running)	{	//Walking Left
+	else if(leftPressed && !running &&!gameOver)	{	//Walking Left
 		marioX -= marioDX;
 		direction = -1;
 		moving = true;
@@ -220,7 +242,7 @@ function marioMoving()	{
 
 	//Running
 
-	if(rightPressed && running)	{		//Running Right
+	if(rightPressed && running &&!gameOver)	{		//Running Right
 		marioX += marioDX * 2;
 		moving = true;
 		direction = 1;
@@ -228,7 +250,7 @@ function marioMoving()	{
 	}
 
 
-	else if(leftPressed && running)	{	//Running Left
+	else if(leftPressed && running &&!gameOver)	{	//Running Left
 		marioX -= marioDX * 2;
 		direction = -1;
 		moving = true;
