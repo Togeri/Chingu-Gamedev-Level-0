@@ -25,7 +25,7 @@ var direction = 1; 	// 1 for right, -1 for left
 var jumpCounter = 0;	//Mario's Jump Mechanics. The longer you hold the jump button, the higher Mario will rise, up to a limit
 var jumpStatus = false;	//Jump status for sprite animation purposes
 //var moving = false;
-
+var gameOverGravity = 0; 	//Gravity variable for Game Over Animation. It's separated from the other as Mario might face death on a Jump, and Gravity will have other value.
 var gravity = 0;		//Gravity starts at 0, and will increment the longer Mario stays in air suspension, kind like acceleration over time
 var jumpForce = 9;		//Force of Mario's jump
 
@@ -132,8 +132,8 @@ function marioAnimations()	{
 		gravity = 0;
 		setTimeout(gameOverAnimation, 750);
 			function gameOverAnimation() {
-				marioY += (-(jumpForce + 3)) + gravity;
-				gravity += 0.7;
+				marioY += (-(jumpForce + 3)) + gameOverGravity;
+				gameOverGravity += 0.7;
 			}
 
 	}
