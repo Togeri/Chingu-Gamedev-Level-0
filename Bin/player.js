@@ -1,5 +1,8 @@
+"use strict";
+var framePosition;
+var mario;
 //TODO sprite mechanics with these sprites
-var mario = images[1]
+//var mario = images[1]
 
 //Mario Variables
 //X and Y position of Mario
@@ -13,7 +16,8 @@ var frameSprite = 0;
 
 
 function marioDraw(){
-    c.drawImage(mario, framePositionX, framePositionY, spriteWidth, spriteHeight, marioX, marioY, tileSize, tileSize);
+    ctx.drawImage(mario, framePositionX, framePositionY + 0.5, spriteWidth, spriteHeight, marioX, marioY, tileSize, tileSize);
+	// (framePositionY + 0.5) added this to remove 1px line on top of Mario head
 }
 
 //Mario Movement Variables
