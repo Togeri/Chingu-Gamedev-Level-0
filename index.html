@@ -63,7 +63,7 @@
                 img.src = imageURLs[i];
 
                  /// if image is cached IE may not trigger onload
-                if (img.complete) onloadHandler().bind(img);
+                //if (img.complete) onloadHandler().bind(img); //Commented just to prevent bugs from rendering
             }
     </script>
 
