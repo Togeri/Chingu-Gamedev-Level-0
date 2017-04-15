@@ -54,6 +54,7 @@ function mapDraw() {
   ctx.fillStyle = "#63adff";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+
   for (var y = 0; y < map.length; y++) {
     for (var x = 0; x < map[y].length; x++) {
       switch (map[y][x]) {
@@ -64,7 +65,8 @@ function mapDraw() {
           drawTile(x, y, tileX[2], tileY[0]); // bricks
           break;
         case 3:
-          drawTile(x, y, tileX[24], tileY[0]); // question box
+         // drawTile(x, y, tileX[24], tileY[0]); // question box
+            questionMark.draw(x*tileSize, y*tileSize);
           break;
         case 4:
           drawTile(x, y, tileX[0], tileY[9]); // pipe left

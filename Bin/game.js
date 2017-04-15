@@ -3,6 +3,13 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var imageManager;
+var questionMark;
+
+var questionMarkFrames = [
+  [384, 0, 16, 16],
+  [400, 0, 16, 16],
+  [416, 0, 16, 16]
+];
 
 
 function init() {
@@ -36,8 +43,11 @@ function onLoaded() {
   tileSet = imageManager.get("tileSet"); // tileSet is declered in map.js
   marioSprite = imageManager.get("mario");    //  marioSprite is declered in player.js
 
+  questionMark = new QuestionMark(tileSet, ctx, questionMarkFrames, tileSize, 50, 50);
+
   tilesInit(); //Fill the tileX, tileY arrays
   loop();
+
 }
 
 function loop() {
@@ -46,6 +56,8 @@ function loop() {
   marioAnimations();
   marioStatus();
   marioMoving();
+  
 
   setTimeout(loop, 17);
 }
+
