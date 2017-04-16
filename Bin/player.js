@@ -1,6 +1,7 @@
 "use strict";
 
-var marioSprite; //var marioSprite = images[1]
+var marioSprite;
+ //var marioSprite = images[1]
 
 //Mario Variables
 var marioX = 100;	//Mario's X-axis

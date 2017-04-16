@@ -5,13 +5,7 @@ var ctx = canvas.getContext("2d");
 var imageManager;
 var questionMark;
 
-var questionMarkFrames = [
-  [384, 0, 16, 16],
-  [400, 0, 16, 16],
-  [416, 0, 16, 16]
-];
-
-
+// init() is called when the <body> is loaded
 function init() {
 
   imageManager = new ImageManager();
@@ -43,7 +37,7 @@ function onLoaded() {
   tileSet = imageManager.get("tileSet"); // tileSet is declered in map.js
   marioSprite = imageManager.get("mario");    //  marioSprite is declered in player.js
 
-  questionMark = new QuestionMark(tileSet, ctx, questionMarkFrames, tileSize, 50, 50);
+  questionMark = new FramesSetToAnimate(tileSet, ctx, questionMarkFrames, tileSize);
 
   tilesInit(); //Fill the tileX, tileY arrays
   loop();
@@ -56,8 +50,16 @@ function loop() {
   marioAnimations();
   marioStatus();
   marioMoving();
-  
 
   setTimeout(loop, 17);
 }
 
+
+/** 
+ * @param frames - array with [x,y,width,height] every frames coordinates and size on spriteSheet  
+ */
+var questionMarkFrames = [
+  [384, 0, 16, 16],
+  [400, 0, 16, 16],
+  [416, 0, 16, 16]
+];

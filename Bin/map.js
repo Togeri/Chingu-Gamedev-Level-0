@@ -15,7 +15,7 @@ var map = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 2, 2, 2, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 2, 2, 2, 2, 3, 2, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -41,11 +41,11 @@ function tilesInit() {
 }
 
 // draws the actual tile
-function drawTile(x, y, inputX, inputY,correction) {
+function drawTile(x, y, inputX, inputY, correction) {
   //tileSize = size of tile. inputX,Y = where from tilemap to crop. x,y = where to place tile.
   // (correction) it is to remove 1px line in right side of the pipe
-  correction = correction || 0; 
-  ctx.drawImage(tileSet, inputX, inputY, 16-correction, 16, x * tileSize-correction, y * tileSize, tileSize, tileSize);
+  correction = correction || 0;
+  ctx.drawImage(tileSet, inputX, inputY, 16 - correction, 16, x * tileSize - correction, y * tileSize, tileSize, tileSize);
 }
 
 // Loop that fills in tiles from map data
@@ -65,8 +65,8 @@ function mapDraw() {
           drawTile(x, y, tileX[2], tileY[0]); // bricks
           break;
         case 3:
-         // drawTile(x, y, tileX[24], tileY[0]); // question box
-            questionMark.draw(x*tileSize, y*tileSize);
+          // drawTile(x, y, tileX[24], tileY[0]); // question box
+          questionMark.draw(x * tileSize, y * tileSize); // "animation" of question mark
           break;
         case 4:
           drawTile(x, y, tileX[0], tileY[9]); // pipe left
@@ -79,6 +79,9 @@ function mapDraw() {
           break;
         case 7:
           drawTile(x, y, tileX[1], tileY[9], 1); // pipe right
+          break;
+        case 8:
+          drawTile(x, y, tileX[27], tileY[0]); // brick block OFF
           break;
       }
     }
