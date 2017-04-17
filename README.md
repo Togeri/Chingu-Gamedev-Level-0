@@ -1,3 +1,3 @@
 # Chingu-Gamedev-Level-0
 
-//TODO - paste a link to gitHub pages :)
+Try it here http://gerardotoledo.com/Chingu-Gamedev-Level-0/ :)
