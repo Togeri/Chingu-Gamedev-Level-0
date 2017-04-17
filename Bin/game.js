@@ -50,6 +50,9 @@ function loop() {
   marioAnimations();
   marioStatus();
   marioMoving();
+  updateScreenPosition();
+
+    console.log('X', marioX);
 
   setTimeout(loop, 17);
 }

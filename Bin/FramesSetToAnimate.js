@@ -22,7 +22,7 @@ var _p = FramesSetToAnimate.prototype;
  */
 _p.draw = function (posX, posY) {
     this.ctx.drawImage(this.image, this.frames[this.currentFrame][0], this.frames[this.currentFrame][1], this.frames[this.currentFrame][2], this.frames[this.currentFrame][3],
-        posX, posY, this.width, this.height);
+        posX - mapOffsetX, posY, this.width, this.height);
     var now = new Date().getTime();
     if (now - this.previusTime > 150) {  // how often the frame should change
         this.previusTime = now;

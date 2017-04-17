@@ -1,4 +1,6 @@
 "use strict";
+// TODO marioX can not be lower then 0, he can not go out of the screen
+
 
 var marioSprite;
  //var marioSprite = images[1]
@@ -192,7 +194,7 @@ function marioStatus() {
 
 	//Triggering Game Over Animation when MarioX == 700 for Dev purposes
 	if (marioX >= 700) {
-		gameOver = true;
+		// gameOver = true;
 	}
 
 }
