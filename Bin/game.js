@@ -16,6 +16,7 @@ function init() {
     "objectsSheet": 'Assets/img/Items & Objects.png',
     "mario": 'Assets/img/mario.png',
     "tileSet": 'Assets/img/Tileset.png',
+    "tileSetMapBank": 'Assets/img/World 1-1_cut_bank.png',
     "textSheet": 'Assets/img/Time Up Game Over Screens and Text.png',
     "titleSheet": 'Assets/img/Title Screen.png'
 
@@ -35,6 +36,7 @@ function onProgress(loaded, total, key, path, success) {
 function onLoaded() {
   console.log("All images loaded");
   tileSet = imageManager.get("tileSet"); // tileSet is declered in map.js
+  tileSetMapBank = imageManager.get("tileSetMapBank"); // tileSetMapBank is declered in map.js
   marioSprite = imageManager.get("mario");    //  marioSprite is declered in player.js
 
   questionMark = new FramesSetToAnimate(tileSet, ctx, questionMarkFrames, tileSize);
@@ -52,7 +54,6 @@ function loop() {
   marioMoving();
   updateScreenPosition();
 
-    console.log('X', marioX);
 
   setTimeout(loop, 17);
 }
