@@ -4,6 +4,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var imageManager;
 var questionMark;
+var goombaAnimations;
 
 // init() is called when the <body> is loaded
 function init() {
@@ -25,7 +26,7 @@ function init() {
 
 function onProgress(loaded, total, key, path, success) {
   if (success) {
-    // Progress bar 
+    // Progress bar
     console.log("loaded " + loaded + " from " + total + " images");
   } else {
     // Error handling
@@ -38,20 +39,31 @@ function onLoaded() {
   tileSet = imageManager.get("tileSet"); // tileSet is declered in map.js
   tileSetMapBank = imageManager.get("tileSetMapBank"); // tileSetMapBank is declered in map.js
   marioSprite = imageManager.get("mario");    //  marioSprite is declered in player.js
+  enemiesSheet = imageManager.get("enemiesSheet"); // enemiesSheet is declared in enemey.js
 
   questionMark = new FramesSetToAnimate(tileSet, ctx, questionMarkFrames, tileSize);
+  goombaAnimations = new FramesSetToAnimate(enemiesSheet, ctx, goombaFrames, 40);
+
 
   tilesInit(); //Fill the tileX, tileY arrays
   loop();
 
 }
 
+// Setup
+// x, y, direction (0 = left, 1 = right)
+var goomba = new Goomba(200, canvas.height - 120, 0);
+var goomba2 = new Goomba(800, canvas.height - 120, 0);
+
+// Game loop
 function loop() {
   mapDraw();
   marioDraw();
   marioAnimations();
   marioStatus();
   marioMoving();
+  goomba.update();
+  goomba2.update();
   updateScreenPosition();
   testOfCollision();
 
@@ -60,11 +72,18 @@ function loop() {
 }
 
 
-/** 
- * @param frames - array with [x,y,width,height] every frames coordinates and size on spriteSheet  
+/**
+ * @param frames - array with [x,y,width,height] every frames coordinates and size on spriteSheet
  */
 var questionMarkFrames = [
   [384, 0, 16, 16],
   [400, 0, 16, 16],
   [416, 0, 16, 16]
 ];
+
+var goombaFrames = [
+  [0, 16, 16, 16],
+  [16, 16, 16, 16],
+  [0, 16, 16, 16],
+  [16, 16, 16, 16]
+]
