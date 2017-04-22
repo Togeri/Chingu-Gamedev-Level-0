@@ -53,6 +53,7 @@ function loop() {
   marioStatus();
   marioMoving();
   updateScreenPosition();
+  testOfCollision();
 
 
   setTimeout(loop, 17);

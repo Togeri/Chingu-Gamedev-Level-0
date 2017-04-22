@@ -23,8 +23,8 @@ var map =
     [1, 1, 25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 21, 1, 1, 1, 1, 1, 1, 26, 27, 1, 1, 25, 1, 1, 1, 1, 1, 1, 26, 27, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 15, 15, 1, 1, 15, 15, 1, 1, 1, 1, 25, 1, 1, 1, 15, 15, 15, 1, 1, 15, 15, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 15, 15, 15, 15, 15, 15, 15, 1, 1, 1, 1, 25, 1, 1, 1, 16, 1, 1, 1, 19, 30, 30, 30, 19, 1, 1, 1, 1, 1,],
     [1, 31, 32, 33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 21, 1, 1, 1, 1, 1, 1, 1, 1, 26, 27, 1, 1, 1, 1, 1, 1, 26, 27, 1, 31, 32, 33, 1, 1, 1, 1, 1, 26, 27, 1, 1, 1, 1, 1, 1, 25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 31, 32, 33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 34, 35, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 15, 15, 15, 1, 1, 15, 15, 15, 1, 1, 31, 32, 33, 1, 15, 15, 15, 15, 1, 1, 15, 15, 15, 1, 1, 1, 25, 1, 20, 21, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 21, 1, 15, 15, 15, 15, 15, 15, 15, 15, 1, 1, 1, 31, 32, 33, 1, 1, 16, 1, 1, 1, 23, 23, 36, 23, 23, 1, 1, 25, 1, 1,],
     [31, 32, 37, 38, 33, 1, 1, 1, 1, 1, 1, 39, 40, 40, 40, 41, 31, 32, 33, 1, 1, 1, 1, 39, 40, 41, 1, 1, 26, 27, 1, 1, 1, 1, 1, 1, 1, 1, 26, 27, 1, 39, 40, 40, 41, 1, 26, 27, 31, 32, 37, 38, 33, 1, 1, 1, 1, 26, 27, 39, 40, 40, 40, 41, 31, 32, 33, 1, 1, 1, 1, 39, 40, 41, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 39, 40, 40, 41, 1, 1, 1, 31, 32, 37, 38, 33, 1, 1, 1, 1, 1, 1, 39, 40, 40, 40, 42, 43, 44, 45, 1, 1, 1, 1, 39, 40, 41, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 15, 15, 15, 15, 40, 40, 15, 15, 15, 15, 31, 32, 37, 38, 15, 15, 15, 15, 15, 1, 1, 15, 15, 15, 15, 41, 31, 32, 33, 26, 27, 1, 1, 39, 40, 41, 1, 1, 1, 1, 1, 1, 1, 1, 1, 26, 27, 15, 15, 15, 15, 15, 15, 15, 15, 15, 1, 1, 31, 32, 37, 38, 33, 1, 15, 1, 1, 1, 23, 23, 46, 23, 23, 41, 31, 32, 33, 1,],
-    [47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47,1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47,],
-    [47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47,1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47,]
+    [47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47,],
+    [47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 1, 1, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47, 47,]
   ];
 
 var tileSize = canvas.height / 16; // Game map is 16 tiles high
@@ -102,13 +102,13 @@ function mapDraw() {
           drawTile(x, y, tileX[7], tileY[0], 0, -1); // cloud bottom right
           break;
         case 9:
-          ctx.drawImage(tileSetMapBank, tileX[8], tileY[0], 16, 15, x * tileSize - mapOffsetX-0.5, y * tileSize, tileSize, tileSize); // flag 1 
+          ctx.drawImage(tileSetMapBank, tileX[8], tileY[0], 16, 15, x * tileSize - mapOffsetX - 0.5, y * tileSize, tileSize, tileSize); // flag 1 
           break;
         case 10:
-          ctx.drawImage(tileSetMapBank, tileX[9], tileY[0], 16, 15, x * tileSize - mapOffsetX-0.5, y * tileSize, tileSize+1, tileSize); // flag 2 
+          ctx.drawImage(tileSetMapBank, tileX[9], tileY[0], 16, 15, x * tileSize - mapOffsetX - 0.5, y * tileSize, tileSize + 1, tileSize); // flag 2 
           break;
         case 11:
-          ctx.drawImage(tileSetMapBank, tileX[10]+1, tileY[0], 15, 15, x * tileSize - mapOffsetX-0.5, y * tileSize, tileSize+1, tileSize); // mast top 
+          ctx.drawImage(tileSetMapBank, tileX[10] + 1, tileY[0], 15, 15, x * tileSize - mapOffsetX - 0.5, y * tileSize, tileSize + 1, tileSize); // mast top 
           break;
         case 12:
           questionMark.draw(x * tileSize, y * tileSize); // "animation" of question mark
@@ -123,7 +123,7 @@ function mapDraw() {
           drawTile(x, y, tileX[3], tileY[1]); // stairs 
           break;
         case 16:
-          ctx.drawImage(tileSetMapBank, tileX[4]+0.5, tileY[1]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // mast middle 
+          ctx.drawImage(tileSetMapBank, tileX[4] + 0.5, tileY[1] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // mast middle 
           break;
         case 17:
           drawTile(x, y, tileX[5], tileY[1]); // 
@@ -153,10 +153,10 @@ function mapDraw() {
           ctx.drawImage(tileSetMapBank, tileX[2] + 0.5, tileY[2] + 0.5, 15, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush top
           break;
         case 26:
-          ctx.drawImage(tileSetMapBank, tileX[3]+0.5, tileY[2]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // pipe bottom left        
+          ctx.drawImage(tileSetMapBank, tileX[3] + 0.5, tileY[2] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // pipe bottom left        
           break;
         case 27:
-          ctx.drawImage(tileSetMapBank, tileX[4], tileY[2]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // pipe bottom right
+          ctx.drawImage(tileSetMapBank, tileX[4], tileY[2] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // pipe bottom right
           break;
         case 28:
           drawTile(x, y, tileX[5], tileY[2]); // 
@@ -174,40 +174,40 @@ function mapDraw() {
           ctx.drawImage(tileSetMapBank, tileX[9], tileY[2] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush middle
           break;
         case 33:
-          ctx.drawImage(tileSetMapBank, tileX[10], tileY[2]+0.5, 16, 16, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush right 
+          ctx.drawImage(tileSetMapBank, tileX[10], tileY[2] + 0.5, 16, 16, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush right 
           break;
         case 34:
-          ctx.drawImage(tileSetMapBank, tileX[0], tileY[3]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // sky close to bush  
+          ctx.drawImage(tileSetMapBank, tileX[0], tileY[3] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // sky close to bush  
           break;
         case 35:
-          ctx.drawImage(tileSetMapBank, tileX[1]-0.5, tileY[3]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush top middle 
+          ctx.drawImage(tileSetMapBank, tileX[1] - 0.5, tileY[3] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush top middle 
           break;
         case 36:
           drawTile(x, y, tileX[2], tileY[3]); // 
           break;
         case 37:
-          ctx.drawImage(tileSetMapBank, tileX[3]+0.5, tileY[3]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush middle 
+          ctx.drawImage(tileSetMapBank, tileX[3] + 0.5, tileY[3] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush middle 
           break;
         case 38:
-          ctx.drawImage(tileSetMapBank, tileX[4]-0.5, tileY[3]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush middle 2
+          ctx.drawImage(tileSetMapBank, tileX[4] - 0.5, tileY[3] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush middle 2
           break;
         case 39:
-          ctx.drawImage(tileSetMapBank, tileX[5]+0.5, tileY[3], 16, 16, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush light green left
+          ctx.drawImage(tileSetMapBank, tileX[5] + 0.5, tileY[3], 16, 16, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush light green left
           break;
         case 40:
           drawTile(x, y, tileX[6], tileY[3]); // 
           break;
         case 41:
-          ctx.drawImage(tileSetMapBank, tileX[7]-0.5, tileY[3]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush light green right
+          ctx.drawImage(tileSetMapBank, tileX[7] - 0.5, tileY[3] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush light green right
           break;
         case 42:
-          ctx.drawImage(tileSetMapBank, tileX[8], tileY[3]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush light green right
+          ctx.drawImage(tileSetMapBank, tileX[8], tileY[3] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush light green right
           break;
         case 43:
-          ctx.drawImage(tileSetMapBank, tileX[9], tileY[3]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush dark green 
+          ctx.drawImage(tileSetMapBank, tileX[9], tileY[3] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush dark green 
           break;
         case 44:
-          ctx.drawImage(tileSetMapBank, tileX[10], tileY[3]+0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush dark green 
+          ctx.drawImage(tileSetMapBank, tileX[10], tileY[3] + 0.5, 16, 15, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush dark green 
           break;
         case 45:
           ctx.drawImage(tileSetMapBank, tileX[0], tileY[4], 15, 16, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // bush dark green
@@ -218,9 +218,9 @@ function mapDraw() {
         case 47:
           drawTile(x, y, tileX[2], tileY[4]); // ground
           break;
-        // case 'off':
-        //   drawTile(x, y, tileX[27], tileY[0]); // brick block OFF - drawn on map when Mario hits question mark (change 12 to 'off' in map array)
-        //   break;
+        case 'questionMarkOFF':
+          ctx.drawImage(tileSet, 432, 0, 16, 16, x * tileSize - mapOffsetX, y * tileSize, tileSize, tileSize); // brick block OFF - drawn on map when Mario hits question mark (change 12 to 'off' in map array)
+          break;
       }
     }
   }
