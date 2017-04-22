@@ -162,12 +162,11 @@ function marioStatus() {
 
 	//Actions Status
 
-	//For dev purposes, 500 height will be the "floor"
 	if (marioY >= tileSize * 13 && !gameOver) {
 
 		jumpStatus = false;
 		jumpCounter = 0;
-		marioSuspension = false;
+		marioSuspension = true;
 		marioLanded = true;
 		gravity = 0;
 
@@ -193,8 +192,8 @@ function marioStatus() {
 	//Mario Game Over
 
 	//Triggering Game Over Animation when MarioX == 700 for Dev purposes
-	if (marioX >= 700) {
-		// gameOver = true;
+	if (marioY >= tileSize *15) {
+		gameOver = true;
 	}
 
 }
