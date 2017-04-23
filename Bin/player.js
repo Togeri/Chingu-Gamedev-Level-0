@@ -1,9 +1,6 @@
 "use strict";
-// TODO marioX can not be lower then 0, he can not go out of the screen
-
 
 var marioSprite;
- //var marioSprite = images[1]
 
 //Mario Variables
 var marioX = 100;	//Mario's X-axis
@@ -17,6 +14,7 @@ var marioDY = 7;	//Mario's Movement-Ratio in Y-Axis
 var frameWidth = 16;		//Sprite's Frame Width
 var frameHeight = 16;		//Sprite's Frame Height
 
+// var frameXPosition = 210;		//Sprite Frame X Position - 210 = Default Standing Mario
 var frameXPosition = 210;		//Sprite Frame X Position - 210 = Default Standing Mario
 var frameYPosition = 0;			//Sprite Frame Y Position 
 

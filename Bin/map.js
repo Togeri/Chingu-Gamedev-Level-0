@@ -3,7 +3,7 @@ var tileSet; // this is spritet sheet with all tiles of background
 var mapOffsetX = 0; // left side of the screen in pixels
 var tileSetMapBank; // this is spritet sheet with all tiles of background from original level1-1
 
-// var tileSet = images[0];
+// var mapOffsetX = 7500; // start pos to development TESTS !!!!!!!!!!!!!!!!!!!!!
 
 //Map is a 2D array
 //Screen is 16 x 20 tiles (640 x 800px of 40px each)
@@ -56,11 +56,13 @@ function drawTile(x, y, inputX, inputY, correctionX, correctionY) {
 // Loop that fills in tiles from map data
 
 function updateScreenPosition() {
-  if (marioX > canvas.width / 2) { // if Mario want to go further then middle of the screen
+
+  if (marioX > canvas.width / 2                       // if Mario want to go further then middle of the screen 
+    && mapOffsetX + 20 * tileSize < 212 * tileSize) {  //and he is not at the end of the map
     if (rightPressed && running && !gameOver) {		//Running Right
-      mapOffsetX += marioDX * 2;           // how fast screen is scrolling when Mario is running
+      mapOffsetX += marioDX * 2;                  // how fast screen is scrolling when Mario is running
     } else {
-      mapOffsetX += marioDX;           // how fast screen is scrolling
+      mapOffsetX += marioDX;                      // how fast screen is scrolling
     }
     marioX = canvas.width / 2;
   }
